@@ -49,6 +49,7 @@ describe Devise::SamlSessionsController, type: :controller do
     context "when using the default saml config" do
       it "redirects to the IdP SSO target url" do
         do_get
+        #puts response.inspect
         expect(response).to redirect_to(%r(\Ahttp://localhost:8009/saml/auth\?SAMLRequest=))
       end
     end
