@@ -5,7 +5,6 @@ module Devise
     class SamlAuthenticatable < Authenticatable
       include DeviseSamlAuthenticatable::SamlConfig
       def valid?
-        puts "valid called"
         if params[:SAMLResponse]
           OneLogin::RubySaml::Response.new(
             params[:SAMLResponse],
